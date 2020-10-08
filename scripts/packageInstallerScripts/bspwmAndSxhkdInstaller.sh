@@ -36,9 +36,9 @@ cp /home/syreus/linuxSetup/configArchive/sxhkd/sxhkdrc /home/syreus/.config/sxhk
 echo "**********  now let's add bspwm and sxhkd to autostart and remove xfwm4  ***********"
 sleep $sleep_time
 
-mkdir $USER/.config/autostart
-cp $USER/linuxSetup/configArchive/bspwm/bspwm.desktop $USER/.config/autostart/
-cp $USER/linuxSetup/configArchive/sxhkd/sxhkd.desktop $USER/.config/autostart/
+mkdir /home/syreus/.config/autostart
+cp /home/syreus/linuxSetup/configArchive/bspwm/bspwm.desktop $USER/.config/autostart/
+cp /home/syreus/linuxSetup/configArchive/sxhkd/sxhkd.desktop $USER/.config/autostart/
 
 sudo apt remove xfwm4 xfdesktop
 chmod u+x /home/syreus/.config/
