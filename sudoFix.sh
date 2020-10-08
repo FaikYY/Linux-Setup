@@ -1,3 +1,6 @@
+# go to main directory
+cd
+
 # go to superuser mode
 su
 
