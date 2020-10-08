@@ -44,7 +44,7 @@ cp /home/syreus/linuxSetup/configArchive/sxhkd/sxhkd.desktop /home/syreus/.confi
 sudo rm -rf /home/syreus/.config/bspwm/bspwmrc
 sudo cp /home/syreus/linuxSetup/configArchive/bspwm/bspwmrc /home/syreus/.config/bspwm/
 
-sudo apt remove xfwm4 xfce4-panel
+sudo apt remove -y xfwm4 xfce4-panel
 sudo chmod u+x /home/syreus/.config/
 sudo chmod +x /home/syreus/.config/bspwm/
 echo "!!!!!!!!!!  script completed successfully, you can reboot now  !!!!!!!!!!!"

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-su -
+
 cd /home/syreus/linuxSetup/scripts
 bash vmboxFix.sh
 bash githubUserAdd.sh
