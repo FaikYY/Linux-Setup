@@ -2,7 +2,6 @@
 
 su -
 cd /home/syreus/linuxSetup/scripts
-bash sudoFix.sh
 bash vmboxFix.sh
 bash githubUserAdd.sh
 bash fontJetbrainMonoInstall.sh
