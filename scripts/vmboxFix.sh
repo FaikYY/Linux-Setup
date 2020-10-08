@@ -33,13 +33,13 @@ apt-get install -y build-essential module-assistant
 # now we're ready to rock
 echo "**********   vmBox is being fixed, please wait a second..   *********"
 sleep $sleep_time
-m-a prepare
+m-a -y prepare
 
 # user turn
 echo "please insert the vmbox additions file in 20 seconds, click devices and select install guest additions"
 sleep $sleep_longtime
 mount /media/cdrom
-sh -y /media/cdrom/VBoxLinuxAdditions.run
+sh /media/cdrom/VBoxLinuxAdditions.run
 
 echo "!!!!!!!   The process completed successfully, please reboot to see the changes  !!!!!"
 
