@@ -17,8 +17,8 @@ fi
 # we need to install nodejs, npm and yarn to be able to run vim  properly
 echo "**********  nodejs, npm, yarn and others needed to be able to run vim. Let's install them first  *********"
 sleep $sleep_time
-sudo apt-get install curl wget
-sudo apt-get install software-properties-common
+sudo apt-get install -y curl wget
+sudo apt-get install -y software-properties-common
 
 # add new repository and delete old ones
 sudo add-apt-repository -y -r ppa:chris-lea/node.js
@@ -33,7 +33,7 @@ VERSION=node_14.x
 DISTRO="$(lsb_release -s -c)"
 echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
-sudo apt install nodejs npm
+sudo apt install -y nodejs npm
 echo "!!!!!!!!!  Nodejs installed successfully  !!!!!!!!!"
 sleep $sleep_time
 
@@ -42,7 +42,7 @@ echo "***********  time to install 'yarn'  ***********"
 sleep $sleep_time
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt install yarn
+sudo apt install -y yarn
 echo "!!!!!!!!!!  yarn installed successfully  !!!!!!!!!!"
 sleep $sleep_time
 
@@ -54,7 +54,7 @@ git clone https://github.com/vim/vim.git
 # get needed packages
 echo "**********   essential packages are being downloaded..  **********"
 sleep $sleep_time
-sudo apt install build-essential libncurses5-dev
+sudo apt install -y build-essential libncurses5-dev
 
 # install process is starting here
 cd vim/src

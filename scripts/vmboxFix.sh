@@ -28,7 +28,7 @@ apt-get upgrade
 # install needed programs
 echo "**********   crucial packages are being downloaded..   *********"
 sleep $sleep_time
-apt-get install build-essential module-assistant
+apt-get install -y build-essential module-assistant
 
 # now we're ready to rock
 echo "**********   vmBox is being fixed, please wait a second..   *********"
