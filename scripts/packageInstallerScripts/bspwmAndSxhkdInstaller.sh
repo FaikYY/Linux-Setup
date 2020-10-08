@@ -29,7 +29,7 @@ cd ../sxhkd && make && sudo make install
 
 echo "********** building from source and placing configs  *********** "
 sleep $sleep_time
-mkdir -p /home/syreus/.config/bspwm && mkdir -p /home/syreus/.config/sxhkd
+mkdir /home/syreus/.config/bspwm && mkdir /home/syreus/.config/sxhkd
 cp /home/syreus/linuxSetup/configArchive/bspwm/bspwmrc /home/syreus/.config/bspwm
 cp /home/syreus/linuxSetup/configArchive/sxhkd/sxhkdrc /home/syreus/.config/sxhkd
 
@@ -41,7 +41,6 @@ cp /home/syreus/linuxSetup/configArchive/bspwm/bspwm.desktop /home/syreus/.confi
 cp /home/syreus/linuxSetup/configArchive/sxhkd/sxhkd.desktop /home/syreus/.config/autostart/
 
 sudo apt remove xfwm4 xfce4-panel
-sudo apt autoremove
 chmod u+x /home/syreus/.config/
 echo "!!!!!!!!!!  script completed successfully, you can reboot now  !!!!!!!!!!!"
 
