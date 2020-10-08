@@ -40,7 +40,7 @@ mkdir /home/syreus/.config/autostart
 cp /home/syreus/linuxSetup/configArchive/bspwm/bspwm.desktop /home/syreus/.config/autostart/
 cp /home/syreus/linuxSetup/configArchive/sxhkd/sxhkd.desktop /home/syreus/.config/autostart/
 
-sudo apt remove xfwm4
+sudo apt remove xfwm4 xfce4-panel
 killall xfdesktop
 chmod u+x /home/syreus/.config/
 echo "!!!!!!!!!!  script completed successfully, you can reboot now  !!!!!!!!!!!"
