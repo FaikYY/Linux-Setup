@@ -2,7 +2,7 @@
 
 
 #NOTE: Since we do not have the root access, this script is supposed to run as root by using command "su"
-echo "Welcome to sudoers fixer script, sit back on relax. I'm gonna take care of everything for you :)"
+echo "WELCOME TO SUDOERS-FILE-FIX SCRIPT, SIT BACK AND RELAX. I'M GONNA TAKE CARE OF EVERYTHING FOR YOU :)"
 sleep 2.5
 
 if [ "$EUID" -ne 0 ]
