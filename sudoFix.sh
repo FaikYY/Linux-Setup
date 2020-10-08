@@ -3,7 +3,12 @@
 
 #NOTE: Since we do not have the root access, this script is supposed to run as root by using command "su"
 echo "Welcome to sudoers fixer script, sit back on relax. I'm gonna take care of everything for you :)"
-sleep 2
+sleep 2.5
+
+if [ "$EUID" -ne 0 ]
+  then echo "This script must be run as ROOT user. PLease try 'su' command and run again.. "
+  exit
+fi
 
 
 # go to superuser mode
@@ -30,3 +35,4 @@ sleep 2
 apt-get install sudo -y
 usermod -aG sudo syreus
 chmod 0440 /etc/sudoers
+
