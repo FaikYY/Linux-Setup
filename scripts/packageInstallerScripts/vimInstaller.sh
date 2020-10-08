@@ -15,8 +15,10 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # we need to install nodejs, npm and yarn to be able to run vim  properly
-echo "**********  nodejs, npm, yarn needed to be able to run vim. Let's install them first  *********"
+echo "**********  nodejs, npm, yarn and others needed to be able to run vim. Let's install them first  *********"
 sleep $sleep_time
+sudo apt-get install curl wget
+sudo apt-get install software-properties-common
 
 # add new repository and delete old ones
 sudo add-apt-repository -y -r ppa:chris-lea/node.js
