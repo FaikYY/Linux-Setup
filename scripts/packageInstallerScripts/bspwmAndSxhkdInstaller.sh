@@ -17,7 +17,7 @@ fi
 # install dependencies
 echo "***********  dependencies are installing  **************"
 sleep $sleep_time
-sudo apt-get install -y libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev psmisc
+sudo apt-get install -y libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev psmisc dmenu
 
 # go ahead and install 
 echo "***********  bspwm and sxhkd github repos installing  ***********"
@@ -41,7 +41,7 @@ cp /home/syreus/linuxSetup/configArchive/bspwm/bspwm.desktop /home/syreus/.confi
 cp /home/syreus/linuxSetup/configArchive/sxhkd/sxhkd.desktop /home/syreus/.config/autostart/
 
 sudo apt remove xfwm4 xfce4-panel
-killall xfdesktop
+sudo apt autoremove
 chmod u+x /home/syreus/.config/
 echo "!!!!!!!!!!  script completed successfully, you can reboot now  !!!!!!!!!!!"
 
