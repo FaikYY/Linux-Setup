@@ -36,5 +36,5 @@ apt-get install sudo -y
 usermod -aG sudo syreus
 chmod 0440 /etc/sudoers
 
-echo "**********  !!COMPLETED SUCCESSFULLY, PLEASE REBOOT TO SEE THE CHANGES!!  **********"
+echo "!!!!  COMPLETED SUCCESSFULLY, PLEASE REBOOT TO SEE THE CHANGES  !!!!"
 
