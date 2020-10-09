@@ -16,16 +16,16 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # install rust first
-sudo curl https://sh.rustup.rs -sSf | sh
+curl https://sh.rustup.rs -sSf | sh
 
-apt-get install -y cmake libfreetype6-dev libfontconfig1-dev xclip
+source $HOME/.cargo/env
+sudo apt-get install -y apt-get install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
 cd $homedir/Downloads
-git clone https://github.com/jwilm/alacritty.git
+git clone https://github.com/alacritty/alacritty.git
 cd alacritty
 cargo build --release
 
-sudo cp -r alacritty /usr/local/bin
-cp extra/linux/Alacritty.desktop  $homedir/.local/share/applications
-gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
-cp extra/completions/alacritty.bash  ~/.alacritty
-echo "source ~/.alacritty" >> ~/.bashrc
+
+
+# shell completion
+echo "source $(pwd)/extra/completions/alacritty.bash" >> ~/.bashrc
