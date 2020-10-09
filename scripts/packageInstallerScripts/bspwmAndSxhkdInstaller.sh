@@ -22,6 +22,8 @@ sudo apt-get install -y libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev
 # go ahead and install 
 echo "***********  bspwm and sxhkd github repos installing  ***********"
 sleep $sleep_time
+
+cd && cd Downloads
 git clone https://github.com/baskerville/bspwm.git
 git clone https://github.com/baskerville/sxhkd.git
 cd bspwm && make && sudo make install
