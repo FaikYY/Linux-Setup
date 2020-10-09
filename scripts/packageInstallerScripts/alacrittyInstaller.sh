@@ -12,7 +12,7 @@ sleep $sleep_time
 
 # install rust first
 curl https://sh.rustup.rs -sSf | sh
-cd 
+cd
 source .cargo/env
 
 sudo apt-get install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3

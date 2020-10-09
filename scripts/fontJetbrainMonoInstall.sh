@@ -18,7 +18,8 @@ echo "*********  let's install the font  **********"
 sleep $sleep_time
 
 # get the file and unzip it
-cd && cd Downloads
+cd
+cd Downloads
 wget https://download.jetbrains.com/fonts/JetBrainsMono-1.0.0.zip
 unzip JetBrainsMono-1.0.0.zip
 

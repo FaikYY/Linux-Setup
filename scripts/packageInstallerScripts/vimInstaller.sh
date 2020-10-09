@@ -49,7 +49,8 @@ sleep $sleep_time
 # get vim from github repo
 echo "**********   getting vim from github repo..  **********"
 sleep $sleep_time
-cd && cd Downloads
+cd
+cd Downloads
 git clone https://github.com/vim/vim.git
 
 # get needed packages
