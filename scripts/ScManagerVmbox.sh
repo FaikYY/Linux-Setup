@@ -14,4 +14,4 @@ bash configInstaller.sh
 
 echo "!!!  Everything has gone well, ready to see your new linux ? Then reboot now  !!!"
 sleep 4
-sudo reboot
+sudo poweroff
