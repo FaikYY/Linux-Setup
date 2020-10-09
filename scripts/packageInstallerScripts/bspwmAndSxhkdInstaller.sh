@@ -40,9 +40,7 @@ mkdir /home/syreus/.config/autostart
 cp /home/syreus/linuxSetup/configArchive/bspwm/bspwm.desktop /home/syreus/.config/autostart/
 cp /home/syreus/linuxSetup/configArchive/sxhkd/sxhkd.desktop /home/syreus/.config/autostart/
 
-# just for insurence
-sudo rm -rf /home/syreus/.config/bspwm/bspwmrc
-sudo cp /home/syreus/linuxSetup/configArchive/bspwm/bspwmrc /home/syreus/.config/bspwm/
+
 
 sudo apt remove -y xfwm4 xfce4-panel
 sudo chmod u+x /home/syreus/.config/
