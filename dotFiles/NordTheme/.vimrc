@@ -1,9 +1,25 @@
 " ######### SETTINGS ##########
 syntax on
-set sts=2
 set backspace=indent,eol,start
 set laststatus=2
 set number
+set noshowmode
+
+" Tab must be 2
+set sts=2
+set ts=2
+set sw=2
+
+syntax on
+"set split as it should be
+set splitbelow
+set splitright
+
+set path+=**
+
+"mouse support with alacritty
+set mouse=a
+set ttymouse=sgr
 
 "unicode support
 scriptencoding utf-8
@@ -15,7 +31,9 @@ set t_Co=256
 
 call plug#begin()
 Plug 'itchyny/lightline.vim'
+Plug 'wesQ3/vim-windowswap'
 Plug 'ap/vim-css-color'
+Plug 'uiiaoo/java-syntax.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim'
 Plug 'AtsushiM/search-parent.vim'
@@ -54,6 +72,11 @@ let g:user_emmet_leader_key=','
 " ########## KEYMAPS ##########
 let mapleader = ','
 
+"for buffer switching
+let g:windowswap_map_keys = 0 "prevent default bindings
+nnoremap <silent> ww :call WindowSwap#EasyWindowSwap()<CR>
+
+
 nnoremap <Leader>o o<Esc>
 nnoremap <leader>v :e $HOME/.vimrc<CR>
 nnoremap <leader>s :wqa<CR>
@@ -62,7 +85,7 @@ inoremap <leader>s <Esc>:w <CR>
 nnoremap <leader>w <C-W>
 inoremap ii <Esc>
 
-nmap <F6> :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 inoremap <leader>.¼ <Esc>
 nnoremap <Leader>w <C-w>
 
@@ -73,11 +96,18 @@ inoremap < <lt>><left>
 inoremap " ""<left>
 inoremap ' ''<left>
 
+
 " Disable arrow keys to get used to vim
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+"set navigation between panes
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 nnoremap H gT
 nnoremap L gt
@@ -168,6 +198,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>q   <Plug>(coc-fix)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
