@@ -49,7 +49,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-#ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -78,9 +78,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source /home/syreus/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# User configuration
 
+# User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -109,6 +108,14 @@ source /home/syreus/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+###########################
+####### ZSH PLUGINS #######
+###########################
+#autocompletion
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+
 ##############################
 ####### CUSTOM COMMANDS ######
 ##############################
@@ -119,8 +126,24 @@ alias goco="cd /home/syreus/.config/"
 
 alias wifioff="nmcli radio wifi off"
 alias wifion="nmcli radio wifi on"
+
 alias keytr="sudo setxkbmap -layout tr"
 alias keyus="sudo setxkbmap -layout us"
+
 alias takess="flameshot"
 alias ip="ip addr"
 
+alias bluetoothon="sudo systemctl enable bluetooth && sudo systemctl start bluetooth && blueman-applet"
+alias bluetoothoff="sudo systemctl disable bluetooth && sudo systemctl stop bluetooth && sudo killall blueman-applet"
+alias isbluetooth="sudo systemctl is-enabled bluetooth"
+
+alias powersave900="sudo cpupower frequency-set -u 900MHz"
+alias powersave800="sudo cpupower frequency-set -u 800MHz"
+
+
+##############################
+####### ENV VARIABLES ########
+##############################
+export NNN_USE_EDITOR=1
+export VISUAL=vim
+export EDITOR="$VISUAL"

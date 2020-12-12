@@ -37,8 +37,9 @@ Plug 'uiiaoo/java-syntax.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim'
 Plug 'AtsushiM/search-parent.vim'
+Plug 'mcchrish/nnn.vim'
 Plug 'AtsushiM/sass-compile.vim'
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
 Plug 'kien/ctrlp.vim' 
 Plug 'nanotech/jellybeans.vim'
 call plug#end()
@@ -48,8 +49,12 @@ call plug#end()
 
 
 " ######### NERDTREE ##########
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"##################################
+
+
+
 let g:lightline = {
       \ 'colorscheme': 'powerline',
       \ 'active': {
@@ -115,6 +120,27 @@ nnoremap L gt
 "Ctrl + ww: next window
 "Ctrl + wn: new tab
 "f6: toggle
+
+" ###### NNN File Manager Keys #####
+" if there is nothing in the screen then launch nnn
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NnnPicker | endif
+" Disable default mappings
+let g:nnn#set_default_mappings = 0
+" Then set your own
+nnoremap <silent> <leader>nn :NnnPicker<CR>
+" Or override
+" Start nnn in the current file's directory
+nnoremap <leader>n :NnnPicker %:p:h<CR>
+
+" Floating window (neovim latest and vim with patch 8.2.191)
+let g:nnn#layout = { 'window': { 'width': 0.7, 'height': 0.9, 'highlight': 'Debug' } }
+
+let g:nnn#action = {
+      \ '<leader>t': 'tab split',
+      \ '<leader>i': 'split',
+      \ '<leader>s': 'vsplit' }
+
 
 
 
