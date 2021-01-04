@@ -4,6 +4,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set number
 set noshowmode
+set cursorline
 
 " Tab must be 2
 set sts=2
@@ -15,8 +16,9 @@ syntax on
 set splitbelow
 set splitright
 
-set path+=**
-
+set path+=**;
+set isfname+={,}
+"" gd key go to the definition on a variable
 "mouse support with alacritty
 set mouse=a
 set ttymouse=sgr
@@ -35,17 +37,25 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'ap/vim-css-color'
 Plug 'uiiaoo/java-syntax.vim'
 Plug 'mattn/emmet-vim'
+"Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'neoclide/coc.nvim'
 Plug 'AtsushiM/search-parent.vim'
 Plug 'mcchrish/nnn.vim'
 Plug 'AtsushiM/sass-compile.vim'
 "Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim' 
 Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
-
+"colorscheme nord
+"### SETTINGS FOR DRACULA ###
+colorscheme dracula
+set termguicolors
+"######################
 "***********************************
+
 
 
 " ######### NERDTREE ##########
@@ -59,7 +69,7 @@ let g:lightline = {
       \ 'colorscheme': 'powerline',
       \ 'active': {
       \   'left': [ [ 'mode'],
-      \             [ 'helloworld'] ]
+      \             [ 'helloworld', 'filename'] ]
       \ },
       \ 'component': {
       \   'helloworld': 'Faik YY'
@@ -102,6 +112,7 @@ inoremap " ""<left>
 inoremap ' ''<left>
 
 
+
 " Disable arrow keys to get used to vim
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -134,7 +145,7 @@ nnoremap <silent> <leader>nn :NnnPicker<CR>
 nnoremap <leader>n :NnnPicker %:p:h<CR>
 
 " Floating window (neovim latest and vim with patch 8.2.191)
-let g:nnn#layout = { 'window': { 'width': 0.7, 'height': 0.9, 'highlight': 'Debug' } }
+let g:nnn#layout = { 'window': { 'width': 0.6, 'height': 0.6, 'highlight': 'Debug' } }
 
 let g:nnn#action = {
       \ '<leader>t': 'tab split',
